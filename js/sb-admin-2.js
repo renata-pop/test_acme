@@ -44,6 +44,27 @@
     }
   });
 
+  (function($) {
+  "use strict"; // Start of use strict
+
+  // Define hardcoded user data
+  const user = {
+    name: "John Doe",
+    email: "john.doe@fancycompany.com",
+    company: "Fancy Company"
+  };
+
+  // Function to track activity
+  function trackActivity(eventType, eventData) {
+    const activityData = {
+      userName: user.name,
+      userEmail: user.email,
+      userCompany: user.company,
+      event: eventType,
+      data: eventData,
+      timestamp: new Date().toISOString()
+    };
+
   // Smooth scrolling using jQuery easing
   $(document).on('click', 'a.scroll-to-top', function(e) {
     var $anchor = $(this);
